@@ -1,0 +1,12 @@
+{
+  "name": "ekraf-purwokerto",
+  "version": "1.0.0",
+  "description": "Platform Resmi Ekonomi Kreatif Kota Purwokerto & Banyumas",
+  "scripts": {
+    "dev": "python -m http.server 8085",
+    "deploy": "npx vercel --prod"
+  },
+  "keywords": ["ekraf", "purwokerto", "banyumas", "umkm", "cms"],
+  "author": "Bintang",
+  "license": "MIT"
+}

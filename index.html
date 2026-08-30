@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Platform Resmi Ekonomi Kreatif (EKRAF) Kota Purwokerto & Banyumas. Temukan direktori UMKM, produk unggulan, festival Menara Pandang Teratai, dan dashboard CMS mandiri." />
+  <meta name="keywords" content="EKRAF Purwokerto, UMKM Banyumas, Menara Pandang Teratai, Tempe Mendoan, Batik Banyumasan, Getuk Goreng Sokaraja, Wisata Purwokerto" />
+  <meta name="author" content="Tim EKRAF Purwokerto & Bintang" />
+
+  <title>EKRAF PURWOKERTO • Platform Ekonomi Kreatif & CMS Mandiri</title>
+
+  <!-- Favicon / Logo Icon -->
+  <link rel="icon" type="image/png" href="assets/images/ekraf_logo.png" />
+
+  <!-- Progressive Web App (PWA) Manifest & Meta Tags -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#F59E0B" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="EKRAF PWT" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================================================================
+       TOPBAR NAVIGATION & MODE SWITCHER
+       =================================================================== -->
+  <header class="app-topbar">
+    <div class="topbar-container">
+      <!-- Brand & Official Logo -->
+      <div class="brand-wrapper" id="brand-home-trigger">
+        <div class="brand-emblem-wrap magic-pulse">
+          <img src="assets/images/ekraf_logo.png" alt="Logo Resmi EKRAF Purwokerto Menara Pandang Teratai" />
+        </div>
+        <div class="brand-text">
+          <h1>EKRAF PURWOKERTO</h1>
+          <span>Kreatif • Inovatif • Berdaya Saing</span>
+        </div>
+      </div>
+
+      <!-- Public Nav Links (Visible in Public Mode) -->
+      <nav id="public-main-nav">
+        <ul class="public-nav-links">
+          <li><a href="#hero-section" class="active">Beranda</a></li>
+          <li><a href="#sektor-umkm-section">Direktori UMKM</a></li>
+          <li><a href="#produk-unggulan-section">Katalog Produk</a></li>
+          <li><a href="#events-section">Event Kota</a></li>
+          <li><a href="#destinasi-section">Destinasi</a></li>
+          <li><a href="#berita-section">Warta Ekraf</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mode Switcher (Portal Publik <-> Dashboard CMS Ala Hostinger) -->
+      <div class="portal-mode-pill">
+        <button id="btn-mode-public" class="mode-btn active" title="Tampilan untuk Warga & Wisatawan">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <span>Portal Publik</span>
+        </button>
+        <button id="btn-mode-cms" class="mode-btn" title="Dashboard Pengelola Konten ala Hostinger">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          <span>Dashboard CMS</span>
+        </button>
+      </div>
+
+      <!-- Topbar Quick Controls -->
+      <div class="topbar-actions">
+        <!-- Install App Button (PWA for Mobile & Desktop) -->
+        <button id="btn-install-pwa" class="btn-install-app" title="Pasang Aplikasi ke Layar HP">
+          <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+          <span>Pasang di HP</span>
+        </button>
+
+        <!-- Magic Particle Effect Switch -->
+        <button id="btn-toggle-magic" class="magic-toggle-btn" title="Aktifkan/Nonaktifkan Partikel Magic">
+          <span>✨ Magic ON</span>
+        </button>
+
+        <!-- Current Active Role Badge -->
+        <div class="role-badge-pill" id="badge-current-user-role" title="Beralih Peran Pengguna">
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Admin: Bintang</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       CONTAINER 1: PORTAL PUBLIK EKRAF PURWOKERTO
+       =================================================================== -->
+  <main id="public-portal-container">
+    
+    <!-- Hero Section (Diagonal Geometry + Menara Pandang Teratai) -->
+    <section class="hero-diagonal-section diagonal-cut-bottom" id="hero-section">
+      <div class="hero-container">
+        
+        <!-- Left Content -->
+        <div class="hero-content">
+          <div class="hero-motto-ribbon">
+            <span class="diagonal-badge diagonal-badge-gold">
+              <span>Banyumas Creative Hub</span>
+            </span>
+            <span class="diagonal-badge diagonal-badge-blue">
+              <span>Tahun 2026</span>
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            Eksplorasi Mahakarya <br />
+            <span class="text-gradient-gold">Ekonomi Kreatif</span> <br />
+            <span class="text-gradient-blue">Kota Purwokerto</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Ruang kolaborasi digital terpadu yang memadukan 17 subsektor ekonomi kreatif, sentra UMKM legendaris Banyumas, pesona Menara Pandang Teratai, dan kemudahan manajemen mandiri tanpa koding.
+          </p>
+
+          <div class="hero-action-group">
+            <a href="#sektor-umkm-section" class="btn btn-gold btn-lg magic-shimmer-btn">
+              <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <span>Jelajahi 1.200+ UMKM</span>
+            </a>
+            <button class="btn btn-outline btn-lg" id="btn-open-register">
+              <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+              <span>Daftarkan Usaha Saya</span>
+            </button>
+          </div>
+
+          <!-- Live Metrics Bar -->
+          <div class="hero-metrics-bar">
+            <div class="metric-item">
+              <div class="metric-icon-box gold">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <div class="metric-num" id="metric-hero-umkm">1.245+</div>
+                <div class="metric-label">Pelaku Ekraf & UMKM</div>
+              </div>
+            </div>
+
+            <div class="metric-item">
+              <div class="metric-icon-box blue">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+              <div>
+                <div class="metric-num" id="metric-hero-products">328+</div>
+                <div class="metric-label">Produk Unggulan</div>
+              </div>
+            </div>
+
+            <div class="metric-item">
+              <div class="metric-icon-box emerald">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              </div>
+              <div>
+                <div class="metric-num" id="metric-hero-events">42+</div>
+                <div class="metric-label">Event & Festival</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase -->
+        <div class="hero-visual-card magic-glow-border">
+          <div class="hero-img-wrap">
+            <img src="assets/images/purwokerto_hero_bg.jpg" alt="Panorama Menara Pandang Teratai Purwokerto berlatar Gunung Slamet" />
+            <div class="hero-floating-badge">
+              <div class="hero-badge-info">
+                <h4>Menara Pandang Teratai</h4>
+                <p>Ikon Mahkota Teratai & Episentrum Ekraf</p>
+              </div>
+              <div class="hero-badge-icon">
+                <img src="assets/images/ekraf_logo.png" alt="Lambang Ekraf Purwokerto" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Search & 17 Subsektors Filter Section -->
+    <section class="search-filter-section">
+      <div class="search-filter-card">
+        <div class="search-row">
+          <div class="input-with-icon">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="search-input" placeholder="Cari nama usaha, produk (Mendoan, Batik, Getuk), pemilik, atau lokasi..." />
+          </div>
+
+          <div class="input-with-icon">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            <select id="select-category">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <button class="btn btn-outline" id="btn-reset-search" title="Reset Filter">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            <span>Reset</span>
+          </button>
+        </div>
+
+        <!-- Horizontal Scrollable Subsectors Filter Pills -->
+        <div class="sectors-pills-wrap" id="sector-pills-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Direktori UMKM & Pelaku Ekraf Section -->
+    <section class="section-container" id="sektor-umkm-section">
+      <div class="section-header-block">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Katalog Usaha Lokal
+          </span>
+          <h2 class="section-main-title">Direktori UMKM & Pelaku Kreatif</h2>
+          <p class="section-desc">Telusuri profil perajin, kuliner legendaris, paguyuban kesenian, dan studio kreatif terbaik se-Banyumas Raya.</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="diagonal-badge diagonal-badge-white" id="umkm-result-count">Memuat data...</span>
+        </div>
+      </div>
+
+      <!-- UMKM Cards Grid -->
+      <div class="cards-grid" id="umkm-grid-container">
+        <!-- Dynamically rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section-container" id="produk-unggulan-section" style="background: #F1F5F9; border-radius: var(--radius-xl); margin-top: 2rem; margin-bottom: 2rem;">
+      <div class="section-header-block">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Etalase Kebanggaan
+          </span>
+          <h2 class="section-main-title">Produk Kreatif Unggulan Purwokerto</h2>
+          <p class="section-desc">Karya asli buatan anak negeri: Dari mendoan sawangan siap santap hingga kain batik tulis halus bermotif lumbon.</p>
+        </div>
+      </div>
+
+      <div class="products-grid" id="featured-products-container">
+        <!-- Dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- Events & Festival Section -->
+    <section class="section-container" id="events-section">
+      <div class="section-header-block">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Agenda Seni Budaya & Inovasi
+          </span>
+          <h2 class="section-main-title">Kalender Event & Pesta Kreatif 2026</h2>
+          <p class="section-desc">Jangan lewatkan pagelaran akbar di Menara Pandang Teratai, parade kenthongan malam hari, dan pameran kriya Banyumas.</p>
+        </div>
+      </div>
+
+      <div class="events-grid" id="events-grid-container">
+        <!-- Dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- Destinations & Creative Hubs -->
+    <section class="section-container" id="destinasi-section">
+      <div class="section-header-block">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Wisata & Ruang Inspirasi
+          </span>
+          <h2 class="section-main-title">Destinasi & Ruang Kreatif Purwokerto</h2>
+          <p class="section-desc">Kunjungi titik-titik ikonik tempat bertemunya kreativitas, warisan budaya leluhur, dan keindahan panorama alam.</p>
+        </div>
+      </div>
+
+      <div class="dest-grid" id="destinations-container">
+        <!-- Dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- Registration Banner (Sesuai Konsep PDF Halaman 8) -->
+    <section class="section-container">
+      <div class="registration-banner-card">
+        <div class="registration-banner-content">
+          <div>
+            <span class="diagonal-badge diagonal-badge-gold" style="margin-bottom: 0.85rem;">
+              <span>Pelaku UMKM Banyumas</span>
+            </span>
+            <h2>Punya Usaha Kreatif? Daftarkan Profil Anda Gratis!</h2>
+            <p>
+              Bergabunglah ke dalam ekosistem digital resmi EKRAF Purwokerto. Produk Anda akan otomatis tampil di portal publik dan terhubung langsung ke calon pembeli via WhatsApp tanpa potongan komisi.
+            </p>
+            
+            <div class="reg-steps-flow">
+              <div class="reg-step-item"><span>1. Daftar</span></div>
+              <div class="reg-step-item"><span>→ 2. Isi Profil & Foto</span></div>
+              <div class="reg-step-item"><span>→ 3. Submit</span></div>
+              <div class="reg-step-item"><span>→ 4. Admin Kurasi</span></div>
+              <div class="reg-step-item"><span>→ 5. Langsung Tayang!</span></div>
+            </div>
+          </div>
+
+          <div style="text-align: right;">
+            <button class="btn btn-gold btn-lg magic-shimmer-btn" id="btn-banner-register" onclick="document.getElementById('btn-open-register').click()">
+              <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+              <span>Daftar Sekarang (1 Menit)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News & Blog Section (Blogspot Style Articles) -->
+    <section class="section-container" id="berita-section">
+      <div class="section-header-block">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+            Warta & Liputan Kreatif
+          </span>
+          <h2 class="section-main-title">Kabar Terkini Ekonomi Kreatif</h2>
+          <p class="section-desc">Artikel inspiratif seputar inovasi anak muda, teknologi digitalisasi UMKM, dan liputan budaya Banyumasan.</p>
+        </div>
+      </div>
+
+      <div class="news-grid" id="news-grid-container">
+        <!-- Dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-wrapper" style="margin-bottom: 1rem;">
+            <div class="brand-emblem-wrap">
+              <img src="assets/images/ekraf_logo.png" alt="Logo EKRAF Purwokerto" />
+            </div>
+            <div class="brand-text">
+              <h2 style="font-size: 1.15rem;">EKRAF PURWOKERTO</h2>
+              <span>Inovatif & Berdaya Saing</span>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Platform resmi pemberdayaan 17 subsektor ekonomi kreatif Kabupaten Banyumas dan Kota Purwokerto. Menghubungkan kreasi lokal menuju pasar global.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Subsektor Populer</h4>
+          <ul class="footer-links">
+            <li><a href="#sektor-umkm-section">Kuliner Banyumasan (Mendoan)</a></li>
+            <li><a href="#sektor-umkm-section">Kriya & Batik Banyumasan</a></li>
+            <li><a href="#sektor-umkm-section">Seni Pertunjukan (Kenthongan)</a></li>
+            <li><a href="#sektor-umkm-section">Desain Grafis & Animasi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi Portal</h4>
+          <ul class="footer-links">
+            <li><a href="#hero-section">Beranda</a></li>
+            <li><a href="#sektor-umkm-section">Direktori UMKM</a></li>
+            <li><a href="#events-section">Kalender Acara Kota</a></li>
+            <li><a href="#destinasi-section">Destinasi Menara Teratai</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sekretariat & Hub</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Creative Hub Lantai 2, Kawasan Menara Pandang Teratai, Jl. Bung Karno, Purwokerto Selatan, Kabupaten Banyumas, Jawa Tengah 53141.
+          </p>
+          <div style="margin-top: 1rem;">
+            <button class="btn btn-sm btn-outline" onclick="document.getElementById('btn-mode-cms').click()">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              <span>Login Panel Admin CMS</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 EKRAF PURWOKERTO. All Rights Reserved.</div>
+        <div>Didesain dengan Cinta untuk Banyumas & Purwokerto • Elegan Diagonal Style</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ===================================================================
+       CONTAINER 2: DASHBOARD CMS EKRAF (HOSTINGER / BLOGSPOT STYLE)
+       =================================================================== -->
+  <div id="cms-dashboard-container" class="cms-layout-wrapper" style="display: none;">
+    
+    <!-- Sidebar CMS (ala Hostinger Panel) -->
+    <aside class="cms-sidebar">
+      <div class="cms-sidebar-header">
+        <div class="cms-profile-card">
+          <div class="cms-avatar">B</div>
+          <div class="cms-profile-info">
+            <h4 id="cms-profile-name">Bintang (Admin)</h4>
+            <span>Online • Purwokerto Hub</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 0.85rem;">
+          <label style="font-size: 0.7rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase;">Peran Akses:</label>
+          <select id="cms-role-selector" style="width: 100%; padding: 0.35rem 0.5rem; font-size: 0.8rem; border-radius: 6px; border: 1px solid var(--border-light); margin-top: 0.25rem;">
+            <option value="admin" selected>Admin Utama EKRAF</option>
+            <option value="umkm">Admin Pelaku UMKM</option>
+            <option value="editor">Editor Berita</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="cms-nav-group">
+        <div class="cms-nav-label">Menu Utama Panel</div>
+        
+        <a href="#" class="cms-nav-item active" data-cms-view="dashboard">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+            <span>📊 Dashboard Ringkasan</span>
+          </div>
+        </a>
+
+        <a href="#" class="cms-nav-item" data-cms-view="umkm">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>🏪 UMKM & Pelaku Ekraf</span>
+          </div>
+          <span class="cms-nav-badge" id="badge-count-umkm">8</span>
+        </a>
+
+        <a href="#" class="cms-nav-item" data-cms-view="products">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>🛍 Katalog Produk</span>
+          </div>
+          <span class="cms-nav-badge" id="badge-count-prod">6</span>
+        </a>
+
+        <a href="#" class="cms-nav-item" data-cms-view="news">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            <span>📝 Editor Berita (Blog)</span>
+          </div>
+          <span class="cms-nav-badge" id="badge-count-news">3</span>
+        </a>
+
+        <a href="#" class="cms-nav-item" data-cms-view="events">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            <span>📅 Event & Festival</span>
+          </div>
+          <span class="cms-nav-badge" id="badge-count-event">3</span>
+        </a>
+
+        <a href="#" class="cms-nav-item" data-cms-view="destinations">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>📍 Destinasi Wisata</span>
+          </div>
+        </a>
+
+        <div class="cms-nav-label" style="margin-top: 0.75rem;">Konfigurasi Sistem</div>
+
+        <a href="#" class="cms-nav-item" data-cms-view="modules">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <span>🧩 Modul Ekraf (App Store)</span>
+          </div>
+        </a>
+
+        <a href="#" class="cms-nav-item" data-cms-view="settings">
+          <div class="cms-nav-item-left">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span>⚙ Pengaturan & Backup</span>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Dynamic CMS Mount Area -->
+    <main class="cms-main" id="cms-content-mount">
+      <!-- Injected by js/cms.js -->
+    </main>
+
+  </div>
+
+  <!-- ===================================================================
+       MODAL 1: DETAIL UMKM (PUBLIC)
+       =================================================================== -->
+  <div class="modal-backdrop" id="modal-umkm-detail">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem;">Detail Profil Usaha Ekraf</h3>
+        <button class="btn-table-action" data-close-modal title="Tutup">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 2: PENDAFTARAN UMKM MANDIRI (PUBLIC REGISTRATION)
+       =================================================================== -->
+  <div class="modal-backdrop" id="modal-register-umkm">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <span class="diagonal-badge diagonal-badge-gold" style="font-size: 0.7rem; margin-bottom: 0.35rem;">
+            <span>Formulir Terbuka</span>
+          </span>
+          <h3 style="font-size: 1.3rem;">Daftarkan Usaha Anda ke EKRAF Purwokerto</h3>
+        </div>
+        <button class="btn-table-action" data-close-modal title="Tutup">✕</button>
+      </div>
+      <form id="form-public-register-umkm">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nama Usaha / Brand *</label>
+              <input type="text" name="name" required placeholder="Contoh: Mendoan Krispi Satria" />
+            </div>
+            <div class="form-group">
+              <label>Nama Pemilik / Pendiri *</label>
+              <input type="text" name="owner" required placeholder="Contoh: Bintang & Tim" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Kategori Ekraf *</label>
+              <select name="category">
+                <option value="kuliner">Kuliner Banyumasan</option>
+                <option value="kriya">Kriya & Kerajinan</option>
+                <option value="fashion">Fashion & Batik</option>
+                <option value="seni-pertunjukan">Seni Pertunjukan</option>
+                <option value="musik">Musik & Audio</option>
+                <option value="dkv">Desain Komunikasi Visual</option>
+                <option value="film-animasi">Film & Animasi</option>
+                <option value="fotografi">Fotografi</option>
+                <option value="aplikasi-game">Aplikasi & Game</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Nomor WhatsApp Usaha *</label>
+              <input type="tel" name="whatsapp" required placeholder="0812xxxxxxxx" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Deskripsi Singkat Usaha & Keunikan Produk</label>
+            <textarea name="description" rows="3" placeholder="Ceritakan sejarah singkat, keistimewaan bahan baku lokal Banyumas, atau paket layanan Anda..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Alamat Usaha / Toko</label>
+              <input type="text" name="address" placeholder="Jl. Jenderal Soedirman, Purwokerto..." />
+            </div>
+            <div class="form-group">
+              <label>Akun Instagram Usaha</label>
+              <input type="text" name="instagram" placeholder="@usaha_anda" />
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+          <button type="submit" class="btn btn-gold magic-shimmer-btn">
+            <span>Kirim Pendaftaran</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 3: CRUD UMKM OLEH ADMIN / CMS (SESUAI PDF HALAMAN 7)
+       =================================================================== -->
+  <div class="modal-backdrop" id="modal-cms-crud-umkm">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modal-crud-title" style="font-size: 1.25rem;">Kelola Data UMKM (Seperti Blog/CMS)</h3>
+        <button class="btn-table-action" data-close-modal title="Tutup">✕</button>
+      </div>
+      <form id="form-crud-umkm">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nama Usaha *</label>
+              <input type="text" name="name" required />
+            </div>
+            <div class="form-group">
+              <label>Pemilik *</label>
+              <input type="text" name="owner" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Kategori Ekraf</label>
+              <select name="category">
+                <option value="kuliner">Kuliner Banyumasan</option>
+                <option value="kriya">Kriya & Kerajinan</option>
+                <option value="fashion">Fashion & Batik</option>
+                <option value="seni-pertunjukan">Seni Pertunjukan</option>
+                <option value="musik">Musik & Audio</option>
+                <option value="dkv">Desain Komunikasi Visual</option>
+                <option value="film-animasi">Film & Animasi</option>
+                <option value="fotografi">Fotografi</option>
+                <option value="aplikasi-game">Aplikasi & Game</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Status Usaha</label>
+              <select name="status">
+                <option value="Terverifikasi">Terverifikasi</option>
+                <option value="Menunggu Verifikasi">Menunggu Verifikasi</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Deskripsi Usaha</label>
+            <textarea name="description" rows="3"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Alamat Fisik</label>
+              <input type="text" name="address" />
+            </div>
+            <div class="form-group">
+              <label>Link Google Maps</label>
+              <input type="text" name="mapsUrl" placeholder="https://maps.google.com/..." />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nomor WhatsApp</label>
+              <input type="tel" name="whatsapp" placeholder="08xxxxxxxxxx" />
+            </div>
+            <div class="form-group">
+              <label>Instagram</label>
+              <input type="text" name="instagram" placeholder="@nama_usaha" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Website (Opsional)</label>
+              <input type="text" name="website" placeholder="https://..." />
+            </div>
+            <div class="form-group">
+              <label>Jam Buka</label>
+              <input type="text" name="openingHours" value="08:00 - 20:00 WIB" />
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" data-close-modal>Batal</button>
+          <button type="submit" class="btn btn-gold magic-shimmer-btn">
+            <span>Simpan & Tayangkan</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 4: DETAIL BERITA & ARTIKEL
+       =================================================================== -->
+  <div class="modal-backdrop" id="modal-news-detail">
+    <div class="modal-container" style="max-width: 740px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Warta Ekonomi Kreatif</h3>
+        <button class="btn-table-action" data-close-modal title="Tutup">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/magic.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cms.js"></script>
+
+  <!-- Script for Magic Toggle & Navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const magicBtn = document.getElementById('btn-toggle-magic');
+      if (magicBtn && window.Magic) {
+        magicBtn.addEventListener('click', () => {
+          const isEnabled = window.Magic.toggleSparkles();
+          magicBtn.innerHTML = isEnabled ? '<span>✨ Magic ON</span>' : '<span>💤 Magic OFF</span>';
+          if (window.PublicPortal) {
+            window.PublicPortal.showToast(`Efek Magic ${isEnabled ? 'Diaktifkan' : 'Dinonaktifkan'}`, 'info');
+          }
+        });
+      }
+
+      const brandTrigger = document.getElementById('brand-home-trigger');
+      if (brandTrigger) {
+        brandTrigger.addEventListener('click', () => {
+          document.getElementById('btn-mode-public').click();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Smooth scroll for nav
+      document.querySelectorAll('.public-nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+              document.querySelectorAll('.public-nav-links a').forEach(l => l.classList.remove('active'));
+              link.classList.add('active');
+            }
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Mobile Bottom App Bar Navigation (Ala Aplikasi HP Native) -->
+  <nav class="mobile-bottom-nav">
+    <button class="mobile-nav-tab active" id="m-tab-home">
+      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Beranda</span>
+    </button>
+    <button class="mobile-nav-tab" id="m-tab-umkm">
+      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span>UMKM</span>
+    </button>
+    <button class="mobile-nav-tab" id="m-tab-products">
+      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span>Produk</span>
+    </button>
+    <button class="mobile-nav-tab" id="m-tab-events">
+      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+      <span>Event</span>
+    </button>
+    <button class="mobile-nav-tab cms-tab" id="m-tab-cms">
+      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      <span>CMS Panel</span>
+    </button>
+  </nav>
+
+  <!-- PWA & Mobile Navigation Handler -->
+  <script>
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((reg) => console.log('Service Worker terdaftar dengan scope:', reg.scope))
+          .catch((err) => console.log('Gagal mendaftarkan Service Worker:', err));
+      });
+    }
+
+    // PWA Install Prompt Handler
+    let deferredPrompt = null;
+    const btnInstallPwa = document.getElementById('btn-install-pwa');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (btnInstallPwa) {
+        btnInstallPwa.style.display = 'inline-flex';
+      }
+    });
+
+    if (btnInstallPwa) {
+      btnInstallPwa.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === 'accepted') {
+            btnInstallPwa.style.display = 'none';
+          }
+          deferredPrompt = null;
+        } else {
+          alert('Untuk memasang aplikasi ini di HP:\n• Di Chrome Android: Tap menu titik tiga (⋮) lalu pilih "Tambahkan ke Layar Utama" / "Install App".\n• Di Safari iOS: Tap tombol Bagikan (Share) lalu pilih "Tambah ke Layar Utama".');
+        }
+      });
+    }
+
+    // Mobile Bottom Navigation Tabs
+    const mHome = document.getElementById('m-tab-home');
+    const mUmkm = document.getElementById('m-tab-umkm');
+    const mProd = document.getElementById('m-tab-products');
+    const mEvents = document.getElementById('m-tab-events');
+    const mCms = document.getElementById('m-tab-cms');
+
+    function setActiveMobileTab(activeTab) {
+      document.querySelectorAll('.mobile-nav-tab').forEach(t => t.classList.remove('active'));
+      if (activeTab) activeTab.classList.add('active');
+    }
+
+    if (mHome) {
+      mHome.addEventListener('click', () => {
+        document.getElementById('btn-mode-public').click();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveMobileTab(mHome);
+      });
+    }
+
+    if (mUmkm) {
+      mUmkm.addEventListener('click', () => {
+        document.getElementById('btn-mode-public').click();
+        const el = document.getElementById('sektor-umkm-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        setActiveMobileTab(mUmkm);
+      });
+    }
+
+    if (mProd) {
+      mProd.addEventListener('click', () => {
+        document.getElementById('btn-mode-public').click();
+        const el = document.getElementById('produk-unggulan-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        setActiveMobileTab(mProd);
+      });
+    }
+
+    if (mEvents) {
+      mEvents.addEventListener('click', () => {
+        document.getElementById('btn-mode-public').click();
+        const el = document.getElementById('events-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        setActiveMobileTab(mEvents);
+      });
+    }
+
+    if (mCms) {
+      mCms.addEventListener('click', () => {
+        document.getElementById('btn-mode-cms').click();
+        setActiveMobileTab(mCms);
+      });
+    }
+  </script>
+</body>
+</html>
