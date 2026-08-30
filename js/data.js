@@ -460,6 +460,12 @@ class EkrafDataStore {
     }
     localStorage.setItem(STORAGE_KEYS.UMKM, JSON.stringify(list));
     this.triggerUpdate('umkm');
+
+    // Cloud sync to Supabase if connected
+    if (window.EkrafSupabase && window.EkrafSupabase.isConnected) {
+      window.EkrafSupabase.saveUMKMToCloud(data);
+    }
+
     return data;
   }
 
@@ -468,6 +474,11 @@ class EkrafDataStore {
     list = list.filter(item => item.id !== id);
     localStorage.setItem(STORAGE_KEYS.UMKM, JSON.stringify(list));
     this.triggerUpdate('umkm');
+
+    // Cloud sync delete to Supabase
+    if (window.EkrafSupabase && window.EkrafSupabase.isConnected) {
+      window.EkrafSupabase.deleteUMKMFromCloud(id);
+    }
   }
 
   // Products CRUD
@@ -553,6 +564,11 @@ class EkrafDataStore {
     }
     localStorage.setItem(STORAGE_KEYS.NEWS, JSON.stringify(list));
     this.triggerUpdate('news');
+
+    if (window.EkrafSupabase && window.EkrafSupabase.isConnected) {
+      window.EkrafSupabase.saveNewsToCloud(data);
+    }
+
     return data;
   }
 
@@ -561,6 +577,10 @@ class EkrafDataStore {
     list = list.filter(n => n.id !== id);
     localStorage.setItem(STORAGE_KEYS.NEWS, JSON.stringify(list));
     this.triggerUpdate('news');
+
+    if (window.EkrafSupabase && window.EkrafSupabase.isConnected) {
+      window.EkrafSupabase.deleteNewsFromCloud(id);
+    }
   }
 
   // Destinations CRUD

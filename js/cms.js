@@ -952,6 +952,69 @@ class CMSController {
         </div>
       </div>
 
+    const isConnected = window.EkrafSupabase && window.EkrafSupabase.isConnected;
+    const currentUrl = window.EkrafSupabase ? window.EkrafSupabase.url : '';
+    const currentKey = window.EkrafSupabase ? window.EkrafSupabase.key : '';
+
+    mount.innerHTML = `
+      <div class="cms-header-row">
+        <div class="cms-page-title">
+          <h2>Pengaturan Platform & Database Cloud</h2>
+          <p>Konfigurasi database Supabase PostgreSQL, backup data JSON, dan reset ke seed data Purwokerto.</p>
+        </div>
+      </div>
+
+      <!-- Supabase Cloud Connection Panel -->
+      <div class="cms-card-panel" style="padding: 2rem; margin-bottom: 2rem; border-color: ${isConnected ? 'var(--emerald-green)' : 'var(--primary-gold)'};">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: #ECFDF5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+              ⚡
+            </div>
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F172A;">Integrasi Database Supabase Cloud</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Simpan data UMKM, event, dan berita langsung di cloud database PostgreSQL Supabase</p>
+            </div>
+          </div>
+          <span class="diagonal-badge ${isConnected ? 'diagonal-badge-emerald' : 'diagonal-badge-gold'}">
+            <span>${isConnected ? '🟢 TERHUBUNG KE SUPABASE' : '🟡 MODE OFFLINE (LOCALSTORAGE)'}</span>
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+          <div class="form-group">
+            <label>Supabase Project URL</label>
+            <input type="text" id="cfg-supabase-url" value="${currentUrl}" placeholder="https://your-project.supabase.co" />
+          </div>
+          <div class="form-group">
+            <label>Supabase Anon Public API Key</label>
+            <input type="password" id="cfg-supabase-key" value="${currentKey}" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." />
+          </div>
+        </div>
+
+        <div style="background: #F8FAFC; border-radius: var(--radius-md); padding: 1rem 1.25rem; margin: 1rem 0; border: 1px dashed var(--border-light); font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+          💡 <strong>Petunjuk Skema Database:</strong> Salin isi file <code>supabase_schema.sql</code> di proyek ini dan jalankan di menu <strong>SQL Editor</strong> dashboard Supabase Anda untuk otomatis membuat seluruh tabel & hak akses publik.
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+          <button class="btn btn-gold magic-shimmer-btn" id="btn-save-supabase">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            <span>Simpan & Hubungkan Supabase</span>
+          </button>
+          
+          <button class="btn btn-emerald" id="btn-seed-supabase">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+            <span>1-Click Upload Data Lokal ke Supabase</span>
+          </button>
+
+          ${isConnected ? `
+            <button class="btn btn-outline" id="btn-disconnect-supabase" style="color: #DC2626;">
+              <span>Putuskan Koneksi</span>
+            </button>
+          ` : ''}
+        </div>
+      </div>
+
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
         <div class="cms-card-panel" style="padding: 1.75rem;">
           <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem;">Cadangkan & Pulihkan Data (JSON)</h3>
@@ -979,28 +1042,52 @@ class CMSController {
       </div>
     `;
 
-    const btnExport = document.getElementById('btn-export-data');
-    if (btnExport) {
-      btnExport.addEventListener('click', () => {
-        const json = window.EkrafStore.exportJSON();
-        const blob = new Blob([json], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `ekraf_purwokerto_backup_${new Date().toISOString().slice(0, 10)}.json`;
-        a.click();
-        URL.revokeObjectURL(url);
-        this.showToast('File backup JSON berhasil diunduh.', 'success');
+    // Supabase config listeners
+    const btnSaveSupabase = document.getElementById('btn-save-supabase');
+    if (btnSaveSupabase) {
+      btnSaveSupabase.addEventListener('click', async () => {
+        const url = document.getElementById('cfg-supabase-url').value;
+        const key = document.getElementById('cfg-supabase-key').value;
+        if (!url || !key) {
+          alert('Mohon isi Supabase Project URL dan Anon Key.');
+          return;
+        }
+
+        try {
+          await window.EkrafSupabase.setCredentials(url, key);
+          this.showToast('Berhasil terhubung ke Supabase Cloud Database! Data tersinkronisasi.', 'success');
+          this.renderSettingsView(mount);
+        } catch (e) {
+          alert('Gagal menghubungkan ke Supabase: ' + e.message + '\nPastikan URL dan Anon Key valid dan tabel umkm sudah dibuat.');
+        }
       });
     }
 
-    const btnReset = document.getElementById('btn-reset-defaults');
-    if (btnReset) {
-      btnReset.addEventListener('click', () => {
-        if (confirm('Apakah Anda yakin ingin mereset seluruh data kembali ke kondisi awal?')) {
-          window.EkrafStore.resetToDefaults();
-          this.showToast('Data berhasil di-reset ke sample bawaan.', 'info');
+    const btnSeedSupabase = document.getElementById('btn-seed-supabase');
+    if (btnSeedSupabase) {
+      btnSeedSupabase.addEventListener('click', async () => {
+        if (!window.EkrafSupabase.client) {
+          alert('Mohon hubungkan ke Supabase terlebih dahulu dengan memasukkan URL & Anon Key di atas.');
+          return;
         }
+        try {
+          btnSeedSupabase.innerText = 'Mengunggah data...';
+          await window.EkrafSupabase.seedAllToSupabase();
+          btnSeedSupabase.innerText = '1-Click Upload Data Lokal ke Supabase';
+          this.showToast('Semua data UMKM, Produk, Event, dan Berita berhasil dimigrasikan ke Supabase!', 'success');
+        } catch (e) {
+          btnSeedSupabase.innerText = '1-Click Upload Data Lokal ke Supabase';
+          alert('Gagal upload ke Supabase: ' + e.message + '\nPastikan skrip SQL di supabase_schema.sql sudah dijalankan di Supabase.');
+        }
+      });
+    }
+
+    const btnDisconnect = document.getElementById('btn-disconnect-supabase');
+    if (btnDisconnect) {
+      btnDisconnect.addEventListener('click', () => {
+        window.EkrafSupabase.disconnect();
+        this.showToast('Koneksi Supabase diputus. Kembali menggunakan database lokal.', 'info');
+        this.renderSettingsView(mount);
       });
     }
   }
