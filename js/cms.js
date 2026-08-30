@@ -648,10 +648,19 @@ class CMSController {
             <div class="form-group">
               <label>Foto Sampul</label>
               <select id="blog-select-image">
-                <option value="assets/images/purwokerto_hero_bg.jpg">Menara Teratai & Gunung Slamet</option>
-                <option value="assets/images/purwokerto_festival.jpg">Pesta Kreatif Purwokerto</option>
-                <option value="assets/images/purwokerto_kuliner.jpg">Kuliner Tempe Mendoan</option>
-                <option value="assets/images/purwokerto_batik.jpg">Batik Tulis Banyumasan</option>
+                <option value="assets/images/purwokerto_hero_bg.jpg">Menara Pandang Teratai & Gn. Slamet</option>
+                <option value="assets/images/mendoan_asli.jpg">Tempe Mendoan Hangat Asli</option>
+                <option value="assets/images/getuk_goreng_asli.jpg">Getuk Goreng Sokaraja Besek Bambu</option>
+                <option value="assets/images/kopi_limpakuwus.jpg">Kopi Pinus Limpakuwus Baturraden</option>
+                <option value="assets/images/purwokerto_batik.jpg">Batik Tulis Banyumasan Asli</option>
+                <option value="assets/images/kenthongan_ebeg.jpg">Festival Kenthongan & Ebeg Banyumasan</option>
+                <option value="assets/images/sandal_bandol.jpg">Kerajinan Sandal Bandol Karangklesem</option>
+                <option value="assets/images/dablongan_kaos.jpg">Distro Kaos Dablongan Ngapak Purwokerto</option>
+                <option value="assets/images/baturraden_asli.jpg">Lokawisata Alam Baturraden</option>
+                <option value="assets/images/kotalama_banyumas.jpg">Gedung Heritage Kota Lama Banyumas</option>
+                <option value="assets/images/andhang_pangrenan.jpg">Taman Rekreasi Andhang Pangrenan</option>
+                <option value="assets/images/studio_animasi.jpg">Studio Animasi & Desain DKV</option>
+                <option value="assets/images/purwokerto_festival.jpg">Pesta & Karnaval Kreatif Purwokerto</option>
                 <option value="assets/images/ekraf_logo.png">Ikon Lambang EKRAF Purwokerto</option>
               </select>
             </div>

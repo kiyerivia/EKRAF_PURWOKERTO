@@ -48,7 +48,7 @@ const INITIAL_UMKM = [
     whatsapp: '6281226789001',
     instagram: '@mendoan_sawangan_pwt',
     website: 'https://mendoansawangan.id',
-    image: 'assets/images/purwokerto_kuliner.jpg',
+    image: 'assets/images/mendoan_asli.jpg',
     openingHours: '07:00 - 22:00 WIB',
     status: 'Terverifikasi',
     isFeatured: true,
@@ -86,7 +86,7 @@ const INITIAL_UMKM = [
     whatsapp: '628112610998',
     instagram: '@getukgoreng_tohirin_asli',
     website: 'https://getuktohirin.co.id',
-    image: 'assets/images/purwokerto_kuliner.jpg',
+    image: 'assets/images/getuk_goreng_asli.jpg',
     openingHours: '06:30 - 21:30 WIB',
     status: 'Terverifikasi',
     isFeatured: true,
@@ -99,13 +99,13 @@ const INITIAL_UMKM = [
     owner: 'Bintang & Kelompok Tani Limpakuwus',
     category: 'kuliner',
     categoryName: 'Kuliner Banyumasan',
-    description: 'Biji kopi robusta dan arabika pilihan hasil budidaya petani lokal kaki Gunung Slamet ketinggian 800-1100 mdpl dengan profil rasa earthy, caramel hints, dan acidity seimbang.',
+    description: 'Biji kopi robusta dan arabika pilihan hasil budidaya petani lokal kaki Gunung Slamet ketinggian 800-1100 mdpl dengan profil rasa earthy, caramel hints, dan aroma sejuk pinus.',
     address: 'Kawasan Hutan Pinus Limpakuwus, Sumbang, Baturraden, Banyumas',
     mapsUrl: 'https://maps.google.com/?q=Limpakuwus+Baturraden',
     whatsapp: '6285741889922',
     instagram: '@kopisatria_limpakuwus',
     website: 'https://kopisatria.id',
-    image: 'assets/images/purwokerto_hero_bg.jpg',
+    image: 'assets/images/kopi_limpakuwus.jpg',
     openingHours: '09:00 - 18:00 WIB',
     status: 'Terverifikasi',
     isFeatured: false,
@@ -118,13 +118,13 @@ const INITIAL_UMKM = [
     owner: 'Kang Warsito S.Sn',
     category: 'seni-pertunjukan',
     categoryName: 'Seni Pertunjukan',
-    description: 'Paguyuban musisi tradisional dan pengrajin alat musik kenthongan bambu wulung Banyumasan. Menyediakan pertunjukan budaya, les tabuh kenthongan, serta penjualan instrumen.',
+    description: 'Paguyuban musisi tradisional dan pengrajin alat musik kenthongan bambu wulung serta tari Ebeg Banyumasan. Menyediakan pertunjukan budaya, les tabuh kenthongan, serta penjualan instrumen.',
     address: 'Jl. Gerilya Barat No. 88, Tanjung, Purwokerto Selatan',
     mapsUrl: 'https://maps.google.com/?q=Purwokerto+Selatan',
     whatsapp: '6282245678901',
     instagram: '@kenthongan_satria_banyumas',
     website: 'https://kenthonganbanyumas.org',
-    image: 'assets/images/purwokerto_festival.jpg',
+    image: 'assets/images/kenthongan_ebeg.jpg',
     openingHours: '10:00 - 21:00 WIB',
     status: 'Terverifikasi',
     isFeatured: true,
@@ -133,7 +133,7 @@ const INITIAL_UMKM = [
   },
   {
     id: 'umkm-6',
-    name: 'Sandal Bandol (Ban Bodol) Kreatif Karanganyar',
+    name: 'Sandal Bandol (Ban Bodol) Kreatif Karangklesem',
     owner: 'Pak Sukirno',
     category: 'kriya',
     categoryName: 'Kriya & Kerajinan',
@@ -143,7 +143,7 @@ const INITIAL_UMKM = [
     whatsapp: '6285890123456',
     instagram: '@sandalbandol_pwt',
     website: '',
-    image: 'assets/images/purwokerto_batik.jpg',
+    image: 'assets/images/sandal_bandol.jpg',
     openingHours: '08:00 - 17:00 WIB',
     status: 'Terverifikasi',
     isFeatured: false,
@@ -162,7 +162,7 @@ const INITIAL_UMKM = [
     whatsapp: '6281399887766',
     instagram: '@radenmas_studio',
     website: 'https://radenmascreative.com',
-    image: 'assets/images/ekraf_logo.png',
+    image: 'assets/images/studio_animasi.jpg',
     openingHours: '09:00 - 18:00 WIB',
     status: 'Terverifikasi',
     isFeatured: true,
@@ -181,7 +181,7 @@ const INITIAL_UMKM = [
     whatsapp: '6281234567899',
     instagram: '@dablongan_clothing_pwt',
     website: 'https://dablongan.com',
-    image: 'assets/images/purwokerto_festival.jpg',
+    image: 'assets/images/dablongan_kaos.jpg',
     openingHours: '09:30 - 21:00 WIB',
     status: 'Terverifikasi',
     isFeatured: false,
@@ -197,7 +197,7 @@ const INITIAL_PRODUCTS = [
     name: 'Paket Mendoan Mentah & Sambal Kecap Pedas (Isi 15 Lembar)',
     price: 35000,
     category: 'Kuliner',
-    image: 'assets/images/purwokerto_kuliner.jpg',
+    image: 'assets/images/mendoan_asli.jpg',
     description: 'Tempe mendoan kedelai lembaran tipis khusus lengkap dengan racikan tepung bumbu dan sambal kecap manis cabe rawit asli.',
     stock: 120,
     sold: 1450,
@@ -221,7 +221,7 @@ const INITIAL_PRODUCTS = [
     name: 'Getuk Goreng Asli H. Tohirin Box Besek Bambu 1 Kg',
     price: 45000,
     category: 'Kuliner',
-    image: 'assets/images/purwokerto_kuliner.jpg',
+    image: 'assets/images/getuk_goreng_asli.jpg',
     description: 'Getuk singkong legit digoreng renyah di luar lembut di dalam dengan kemasan tradisional besek bambu harum.',
     stock: 90,
     sold: 3100,
@@ -233,7 +233,7 @@ const INITIAL_PRODUCTS = [
     name: 'Kopi Robusta Limpakuwus Baturraden 250g (Fine Roast)',
     price: 65000,
     category: 'Kuliner',
-    image: 'assets/images/purwokerto_hero_bg.jpg',
+    image: 'assets/images/kopi_limpakuwus.jpg',
     description: 'Bubuk / biji kopi single origin lereng gunung Slamet dengan notes cokelat pekat dan aroma rempah kayu manis.',
     stock: 45,
     sold: 430,
@@ -245,7 +245,7 @@ const INITIAL_PRODUCTS = [
     name: 'Miniatur Kenthongan Bambu Wulung Ukir Satria',
     price: 85000,
     category: 'Kriya & Musik',
-    image: 'assets/images/purwokerto_festival.jpg',
+    image: 'assets/images/kenthongan_ebeg.jpg',
     description: 'Kerajinan kenthongan kayu bambu wulung fungsional dengan suara nyaring bernada pentatonis Banyumasan.',
     stock: 30,
     sold: 175,
@@ -257,11 +257,23 @@ const INITIAL_PRODUCTS = [
     name: 'Sandal Bandol Gunung Edisi Satria Banyumas',
     price: 60000,
     category: 'Fashion & Kriya',
-    image: 'assets/images/purwokerto_batik.jpg',
+    image: 'assets/images/sandal_bandol.jpg',
     description: 'Sandal outdoor sol ban truk bekas kuat anti selip, nyaman untuk tracking Baturraden dan jalan santai harian.',
     stock: 60,
     sold: 520,
     unit: 'Pasang'
+  },
+  {
+    id: 'prod-7',
+    umkmId: 'umkm-8',
+    name: 'Kaos Distro Dablongan "Asli Ngapak Wong Banyumas"',
+    price: 95000,
+    category: 'Fashion & Batik',
+    image: 'assets/images/dablongan_kaos.jpg',
+    description: 'Kaos katun combed 30s premium dengan sablon plastisol grafis maskot Satria Banyumas dan slogan bahasa Ngapak.',
+    stock: 75,
+    sold: 840,
+    unit: 'Pcs'
   }
 ];
 
@@ -290,7 +302,7 @@ const INITIAL_EVENTS = [
     time: '19:00 - 23:30 WIB',
     location: 'Rute Jl. Jend. Soedirman menuju Alun-Alun Purwokerto',
     category: 'Seni Pertunjukan',
-    image: 'assets/images/purwokerto_festival.jpg',
+    image: 'assets/images/kenthongan_ebeg.jpg',
     description: 'Karnaval budaya spektakuler malam hari menampilkan 27 grup kenthongan terbaik dengan kostum cahaya artistik, tarian ebeg massal, dan mobil hias kreatif.',
     organizer: 'Komunitas Seni Satria Banyumas',
     price: 'Gratis',
@@ -306,7 +318,7 @@ const INITIAL_EVENTS = [
     time: '08:30 - 16:00 WIB',
     location: 'Auditorium Sasana Krida GOR Satria Purwokerto',
     category: 'Workshop & Bisnis',
-    image: 'assets/images/purwokerto_hero_bg.jpg',
+    image: 'assets/images/studio_animasi.jpg',
     description: 'Pertemuan pelaku ekonomi kreatif dengan investor, perbankan, dan kurator marketplace nasional. Sesi pendampingan legalitas NIB, HKI Merek, dan strategi ekspor.',
     organizer: 'Forum Ekraf Banyumas & Bank Indonesia Purwokerto',
     price: 'Registrasi Online (Free Snack & E-Sertifikat)',
@@ -331,7 +343,7 @@ const INITIAL_DESTINATIONS = [
     name: 'Lokawisata Baturraden & Taman Botani',
     category: 'Wisata Alam & Kesejukan',
     location: 'Lereng Gunung Slamet, Kec. Baturraden, Banyumas',
-    image: 'assets/images/purwokerto_hero_bg.jpg',
+    image: 'assets/images/baturraden_asli.jpg',
     description: 'Destinasi ikonik pegunungan dengan hawa sejuk, air terjun alami, kolam air panas belerang, dan sentra kuliner sate kelinci & mendoan hangat.',
     highlights: ['Pemandangan Lembah Hijau', 'Pemandian Air Panas', 'Kuliner Lereng Slamet', 'Spot Foto Instagramable']
   },
@@ -340,9 +352,18 @@ const INITIAL_DESTINATIONS = [
     name: 'Kawasan Kota Lama Banyumas & Desa Wisata Sudagaran',
     category: 'Heritage & Sentra Batik Tulis',
     location: 'Kecamatan Banyumas, Kab. Banyumas',
-    image: 'assets/images/purwokerto_batik.jpg',
+    image: 'assets/images/kotalama_banyumas.jpg',
     description: 'Pusat sejarah Banyumas tempo doeloe dengan arsitektur kolonial, kelenteng kuno Boen Tek Bio, dan sentra perajin batik tulis Banyumasan tradisional.',
     highlights: ['Rumah Pusaka Kolonial', 'Workshop Membatik Tulis', 'Wisata Kuliner Tradisional', 'Sejarah Kadipaten Banyumas']
+  },
+  {
+    id: 'dest-4',
+    name: 'Taman Rekreasi Andhang Pangrenan Purwokerto',
+    category: 'Taman Kota & Panggung Seni',
+    location: 'Jl. Gerilya, Karangklesem, Purwokerto Selatan',
+    image: 'assets/images/andhang_pangrenan.jpg',
+    description: 'Taman rekreasi ruang terbuka hijau perkotaan dengan amfiteater kreatif, taman bunga asri, jogging track, dan panggung pertunjukan seni komunitas rakyat.',
+    highlights: ['Panggung Amfiteater Terbuka', 'Taman Bunga Asri', 'Wahana Ramah Anak', 'Latar Pemandangan Gunung Slamet']
   }
 ];
 
@@ -369,7 +390,7 @@ const INITIAL_NEWS = [
     date: '25 Agustus 2026',
     author: 'Bintang (Inovator Digital)',
     category: 'Teknologi & UMKM',
-    image: 'assets/images/ekraf_logo.png',
+    image: 'assets/images/studio_animasi.jpg',
     summary: 'Sistem CMS mutakhir diluncurkan khusus bagi para pengelola dan pelaku usaha Purwokerto agar bisa mandiri memperbarui katalog produk, berita, dan jadwal event semudah mengoperasikan blog.',
     content: `
       <p>Sering kali pelaku UMKM terkendala teknologi ketika ingin memperbarui data produk atau promo mereka di aplikasi publik. Mengadopsi filosofi kesederhanaan seperti platform Blogspot dan Hostinger, aplikasi EKRAF Purwokerto memperkenalkan sistem manajemen konten mandiri.</p>
@@ -394,6 +415,31 @@ const INITIAL_NEWS = [
       <p>Batik Banyumasan memiliki kepribadian yang jujur, tegas, dan bersahaja sebagaimana watak orang Banyumas (Banyumasan cablaka). Tidak seperti motif pesisiran yang penuh warna cerah mentereng, batik Banyumas mempertahankan keanggunan warna tanah, hitam, dan indigo alami.</p>
       <p>Sentra batik di Desa Sudagaran kini terus membina generasi muda pembatik agar tradisi canting ini tidak punah, dipadukan dengan teknik pemasaran digital modern lewat direktori EKRAF Purwokerto.</p>
     `
+  },
+  {
+    id: 'news-4',
+    title: 'Legit Manisnya Getuk Goreng Sokaraja: Cita Rasa Asli Warisan Nenek Moyang di Dalam Besek Bambu',
+    date: '18 Agustus 2026',
+    author: 'Ahmad Fauzi (Jurnalis Kuliner)',
+    category: 'Kuliner Tradisional',
+    image: 'assets/images/getuk_goreng_asli.jpg',
+    summary: 'Dari singkong pilihan dan gula kelapa murni, Getuk Goreng H. Tohirin Sokaraja membuktikan daya pikat kuliner otentik Banyumas tak lekang oleh zaman.',
+    content: `
+      <p>Aroma manis legit langsung tercium saat membuka kemasan besek bambu khas getuk goreng Sokaraja. Kudapan yang lahir sejak era 1918 ini mulanya adalah getuk basah biasa yang kemudian digoreng agar lebih tahan lama, hingga menjelma menjadi ikon kuliner terpopuler di Banyumas Raya.</p>
+      <p>Kini dengan kehadiran portal EKRAF Purwokerto, wisatawan dapat langsung memesan paket getuk goreng fresh dari wajan penggorengan langsung ke hotel penginapan atau dikirim ke luar kota.</p>
+    `
+  },
+  {
+    id: 'news-5',
+    title: 'Sensasi Menikmati Kopi Robusta Lereng Slamet di Tengah Keasrian Hutan Pinus Limpakuwus',
+    date: '15 Agustus 2026',
+    author: 'Indra Gunawan',
+    category: 'Kuliner & Wisata',
+    image: 'assets/images/kopi_limpakuwus.jpg',
+    summary: 'Kafe kopi berkonsep alam terbuka di Baturraden menghadirkan seduhan biji kopi lokal hasil panen petani Gunung Slamet yang nikmat berpadu hawa pegunungan.',
+    content: `
+      <p>Menyeruput secangkir kopi robusta hangat di bawah rimbunnya pohon pinus Limpakuwus Baturraden memberikan ketenangan tersendiri bagi penikmat kopi. Dikelola oleh pemuda kreatif bersama kelompok tani lokal, kedai ini membuktikan potensi subsektor kuliner dan pariwisata Purwokerto dapat tumbuh beriringan.</p>
+    `
   }
 ];
 
@@ -416,8 +462,10 @@ class EkrafDataStore {
   }
 
   init() {
-    if (!localStorage.getItem(STORAGE_KEYS.UMKM)) {
+    const DATA_VERSION = 'v2_real_purwokerto_images';
+    if (!localStorage.getItem(STORAGE_KEYS.UMKM) || localStorage.getItem('ekraf_data_version') !== DATA_VERSION) {
       this.resetToDefaults();
+      localStorage.setItem('ekraf_data_version', DATA_VERSION);
     }
   }
 
@@ -429,6 +477,7 @@ class EkrafDataStore {
     localStorage.setItem(STORAGE_KEYS.NEWS, JSON.stringify(INITIAL_NEWS));
     localStorage.setItem(STORAGE_KEYS.MODULES, JSON.stringify(INITIAL_MODULES));
     localStorage.setItem(STORAGE_KEYS.USER_ROLE, 'admin'); // default admin for initial review
+    localStorage.setItem('ekraf_data_version', 'v2_real_purwokerto_images');
     this.triggerUpdate('all');
   }
 
