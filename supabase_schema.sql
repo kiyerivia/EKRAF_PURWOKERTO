@@ -104,28 +104,15 @@ ALTER TABLE public.destinations ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.news ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.modules ENABLE ROW LEVEL SECURITY;
 
--- Kebijakan Akses: Publik dapat membaca data (SELECT) secara bebas
-CREATE POLICY "Public read umkm" ON public.umkm FOR SELECT USING (true);
-CREATE POLICY "Public insert umkm" ON public.umkm FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public update umkm" ON public.umkm FOR UPDATE USING (true);
-CREATE POLICY "Public delete umkm" ON public.umkm FOR DELETE USING (true);
+-- Kebijakan Akses: Akses penuh (Read/Write) untuk kemudahan operasional
+CREATE POLICY "Public all umkm" ON public.umkm FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Public all products" ON public.products FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Public all events" ON public.events FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Public all destinations" ON public.destinations FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Public all news" ON public.news FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Public all modules" ON public.modules FOR ALL USING (true) WITH CHECK (true);
 
-CREATE POLICY "Public read products" ON public.products FOR SELECT USING (true);
-CREATE POLICY "Public all products" ON public.products FOR ALL USING (true);
-
-CREATE POLICY "Public read events" ON public.events FOR SELECT USING (true);
-CREATE POLICY "Public all events" ON public.events FOR ALL USING (true);
-
-CREATE POLICY "Public read destinations" ON public.destinations FOR SELECT USING (true);
-CREATE POLICY "Public all destinations" ON public.destinations FOR ALL USING (true);
-
-CREATE POLICY "Public read news" ON public.news FOR SELECT USING (true);
-CREATE POLICY "Public all news" ON public.news FOR ALL USING (true);
-
-CREATE POLICY "Public read modules" ON public.modules FOR SELECT USING (true);
-CREATE POLICY "Public all modules" ON public.modules FOR ALL USING (true);
-
--- Enable Realtime
+-- Aktifkan Realtime Replication untuk Supabase
 ALTER PUBLICATION supabase_realtime ADD TABLE public.umkm;
 ALTER PUBLICATION supabase_realtime ADD TABLE public.products;
 ALTER PUBLICATION supabase_realtime ADD TABLE public.events;

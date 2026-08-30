@@ -944,14 +944,6 @@ class CMSController {
   // VIEW: SETTINGS & DATA BACKUP
   // ==========================================
   renderSettingsView(mount) {
-    mount.innerHTML = `
-      <div class="cms-header-row">
-        <div class="cms-page-title">
-          <h2>Pengaturan Platform & Cadangan Data</h2>
-          <p>Konfigurasi sistem, backup data JSON, dan reset ke seed data Purwokerto bawaan.</p>
-        </div>
-      </div>
-
     const isConnected = window.EkrafSupabase && window.EkrafSupabase.isConnected;
     const currentUrl = window.EkrafSupabase ? window.EkrafSupabase.url : '';
     const currentKey = window.EkrafSupabase ? window.EkrafSupabase.key : '';
